@@ -1,3 +1,6 @@
+# Set a CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com"))
+
 # Specify required packages
 required_packages <- c("shiny", "shinydashboard", "data.table", "DT")
 
