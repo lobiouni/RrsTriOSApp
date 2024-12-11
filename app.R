@@ -273,6 +273,17 @@ server <- function(input, output, session) {
       Lw = Lw[s1,]
       Lw_mean = apply(Lw, 2, mean, na.rm=T)
       Lw_sdev = apply(Lw, 2, sd, na.rm=T)
+      
+      # Round the results to 5 number of decimal places
+      Rrs_mean = round(Rrs_mean, 5)
+      Rrs_sdev = round(Rrs_sdev, 5)
+      
+      Ed_mean = round(Ed_mean, 5)
+      Ed_sdev = round(Ed_sdev, 5)
+      
+      Lw_mean = round(Lw_mean, 5)
+      Lw_sdev = round(Lw_sdev, 5)
+      
       out = cbind(wv, Rrs_mean, Rrs_sdev, Ed_mean, Ed_sdev, Lw_mean, Lw_sdev)
       
       timestamp0 = min(row.names(Rrs))
